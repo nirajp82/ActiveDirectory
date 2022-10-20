@@ -7,6 +7,7 @@ For a long long time I needed to deep dive in current project I’m involved to 
 
 Below is simplified version of the sequence between source and destination domain controllers when the source initiates replication by sending a change notification (picture from TechNet)
 
+![image](https://user-images.githubusercontent.com/61636643/197015131-7319c433-ab69-44e2-bd4f-cbb26c052455.png)
 
 
 Domain Controllers use Update Sequence Numbers aka USNs to determine what changes they needs to replicate. Source determines changes that have been received and destination uses USNs to determine what changes it needs to request.
@@ -15,9 +16,10 @@ USN is found from each Domain Controller highestCommittedUsn attribute on the ro
 
 You can find highestCommitedUsn number with PS “Get-ADRootDSE” or with ADSIEdit.msc
 
-23
+![image](https://user-images.githubusercontent.com/61636643/197015207-45475903-865a-4e02-aa76-892e0dfa6cde.png)
 
  
+![image](https://user-images.githubusercontent.com/61636643/197015248-54e7f734-b2c3-43e7-b334-a996ba872ab2.png)
 
 The following series of diagrams (from Microsoft Technet pages) illustrates the replication for a single object and one of its attributes from creation to replication.
 
@@ -26,13 +28,11 @@ When the object is created, the local USN of 4711 is assigned to each attribute 
 Because the object has not yet changed, the value of its uSNChanged attribute is the same as its uSNCreated attribute 4711.
 Replication-related data on DC1 when user object is created
 
-4.PNG
+![image](https://user-images.githubusercontent.com/61636643/197015356-4efbceea-9ba2-4c16-b8e8-6999a094ec84.png)
 
- 
+ Replication-related Data on DC2 when a New User Object is replicated from DC1
 
-Replication-related Data on DC2 when a New User Object is replicated from DC1
-
-5.PNG
+![image](https://user-images.githubusercontent.com/61636643/197015410-4de21fdf-1d8e-464e-a284-a88909f51998.png)
 
 The following information is transferred in the metadata of an updated attribute value from the source domain controller to the destination domain controller:
 
