@@ -48,6 +48,11 @@ The request also sets the password attribute’s originating USN and local USN t
 The version number of this password’s stamp is 2, which is one version number higher than the version of the previous password.
 Replication-related Data on DC2 after the User Password Value Has Been Changed on DC2
 
+Note:
+How does Active Directory replication work?  
+Now that we know how replication occurs at three levels of directory partition, it is essential to understand that Active Directory replication is attribute-based. To understand this let’s go back to our first example- the change in employees’ telephone numbers. Here “telephone number” is one of the attributes that define the object “employee”. When this attribute is modified, only the change in the attribute, that is the new telephone number, is replicated to all the domain controllers and not the entire object. Here comes the concept of Update Sequence Numbers (USN). When an object is created, by default a USN is assigned to them. Whenever a change is elicited these USNs are incremented making every other USN in other domain controllers go out of date for that object. To ensure that only the most recent changes are replicated, only the highest USN is stored and displayed. Thus changes are monitored and recorded with the help of USN in Active Directory.
+
+
 6.PNG
 
  
