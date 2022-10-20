@@ -50,13 +50,12 @@ Replication-related Data on DC2 after the User Password Value Has Been Changed o
 
 Note:
 How does Active Directory replication work?  
-Now that we know how replication occurs at three levels of directory partition, it is essential to understand that Active Directory replication is attribute-based. To understand this let’s go back to our first example- the change in employees’ telephone numbers. Here “telephone number” is one of the attributes that define the object “employee”. When this attribute is modified, only the change in the attribute, that is the new telephone number, is replicated to all the domain controllers and not the entire object. Here comes the concept of Update Sequence Numbers (USN). When an object is created, by default a USN is assigned to them. Whenever a change is elicited these USNs are incremented making every other USN in other domain controllers go out of date for that object. To ensure that only the most recent changes are replicated, only the highest USN is stored and displayed. Thus changes are monitored and recorded with the help of USN in Active Directory.
+Now that we know how replication occurs at three levels of directory partition, it is essential to understand that Active Directory replication is attribute-based. To understand this let’s go back to our first example- the change in employees’ telephone numbers. Here “telephone number” is one of the attributes that define the object “employee”. **When this attribute is modified, only the change in the attribute**, that is the new telephone number, is replicated to all the domain controllers and not the entire object. Here comes the concept of Update Sequence Numbers (USN). When an object is created, by default a USN is assigned to them. Whenever a change is elicited these USNs are incremented making every other USN in other domain controllers go out of date for that object. To ensure that only the most recent changes are replicated, only the highest USN is stored and displayed. Thus changes are monitored and recorded with the help of USN in Active Directory.
 
 
-6.PNG
+![image](https://user-images.githubusercontent.com/61636643/197015604-6521eb0f-2171-449d-88c3-800161b5dcee.png)
 
  
-
 In the next diagram, the changed password is now replicated back to the original domain controller
 
 Current USN has increased to 5039.
@@ -64,7 +63,7 @@ The replicated update increments the current USN of DC1 to 5040.
 The per-attribute originating USN and stamp (version, originating time, originating DC) are replicated from DC2 to DC1, and the per-attribute local USN and per-object uSNChanged values are set to 5040.
 Replication-related Data on DC1 after the Password Change Has Replicated to DC1
 
-7
+![image](https://user-images.githubusercontent.com/61636643/197015647-7eb06fad-8130-451a-9fba-0a281ec4049d.png)
 
 Replication Request Filtering
 Destination domain controllers use the originating USN to track changes they have received from other domain controllers with which they replicate. When requesting changes from a source domain controller, the destination informs the source of the updates it has already received so that the source never replicates changes that the destination does not need. Two values are used by source and destination domain controllers to filter updates when the destination requests changes from the source replication partner.
@@ -75,10 +74,10 @@ Tracking objects to send for replication
 Values can be seen with following commands:
 
 up-to-dateness vector in the output of the repadmin /showvector
-8
+![image](https://user-images.githubusercontent.com/61636643/197015679-0dd9addf-15a6-47d5-bf1d-0431b352cf31.png)
 
 You can see the high-watermark in the output of the repadmin /showreps /verbose command. Look for lines that begin with “USNs:”. The high-watermark USN is the number that is followed by “/OU”.
-9.png
+![image](https://user-images.githubusercontent.com/61636643/197015701-68048f4c-bf92-4c7f-beb0-7493b095b8f5.png)
 
 Guideline for these vectors and tables are
 
@@ -107,3 +106,4 @@ https://samilamppu.com/2017/04/23/how-ad-ds-replication-work/
 https://www.techtarget.com/searchwindowsserver/definition/update-sequence-number-USN#:~:text=An%20update%20sequence%20number%20(USN,the%20greatest%20USN%20is%20retained.
 
 https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc961798(v=technet.10)?redirectedfrom=MSDN
+https://www.windows-active-directory.com/active-directory-replication.html
