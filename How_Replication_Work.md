@@ -69,8 +69,11 @@ Replication Request Filtering
 Destination domain controllers use the originating USN to track changes they have received from other domain controllers with which they replicate. When requesting changes from a source domain controller, the destination informs the source of the updates it has already received so that the source never replicates changes that the destination does not need. Two values are used by source and destination domain controllers to filter updates when the destination requests changes from the source replication partner.
 Up-to-dateness vector. The current status of the latest originating updates to occur on all domain controllers that store a replica of a specific directory partition
 Tracking attributes to send for replication
-High-watermark (direct up-to-dateness vector). The latest update (originating or replicated) to a specific directory partition that has been received by a destination from a specific source replication partner during the current replication cycle
-Tracking objects to send for replication
+High-watermark (direct up-to-dateness vector). When a destination domain controller requests changes to a directory partition from a source domain controller, the source domain controller provides the changes in increasing order of the usnChanged attribute value. The usnChanged values from the source domain controller are not stored on objects at the destination domain controller, but the **destination domain controller keeps track of the usnChanged value of the most recent object it successfully received from the source domain controller for a specific directory partition. This USN is called the destination's high-watermark** with respect to the directory partition and the source domain controller.
+When requesting changes, the destination domain controller sends its high-watermark value to the source domain controller. The source domain controller uses the information in the high-watermark to reduce the set of objects that it must consider for replication to the destination. No object whose usnChanged value is less than or equal to the high-watermark value can hold updates that the destination domain controller has not already received.
+The high-watermark serves to decrease the CPU time and number of disk I/O operations that would otherwise be required to send only the changes that the destination domain controller has not yet received.
+The latest update (originating or replicated) to a specific directory partition that has been received by a destination from a specific source replication partner during the current replication cycle Tracking objects to send for replication
+
 Values can be seen with following commands:
 
 up-to-dateness vector in the output of the repadmin /showvector
