@@ -8,7 +8,7 @@ A site is a physical location within a network, often corresponding to a local a
 
 In summary, a domain is a logical collection of objects within a network, a domain controller is a server that manages those objects, and a site is a physical location within the network where domain controllers are located. Together, these components form the core of the Active Directory infrastructure, which is used to manage users, groups, and other objects within a network.
 
-2. ** what is object in a domain?**
+2. **What is object in a domain?**
 
 In the context of Active Directory, an object is a data structure that represents a real-world entity, such as a user, group, computer, or network device. Objects have attributes, which are characteristics or properties of the object. For example, a user object might have attributes such as a username, password, and email address.
 
