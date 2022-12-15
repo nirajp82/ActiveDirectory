@@ -36,6 +36,8 @@ LDAP is hierarchical in nature, with a tree-like structure that allows for the o
 
 LDAP uses simple authentication and security mechanisms, making it easy to implement and use, but it also has some limitations, such as the lack of support for encryption and the inability to handle very large directory structures. Overall, LDAP is a useful and widely-used protocol for managing directory information and providing single sign-on capabilities in large organizations.
 
+https://www.digitalocean.com/community/tutorials/understanding-the-ldap-protocol-data-hierarchy-and-entry-components
+
 
 
 
