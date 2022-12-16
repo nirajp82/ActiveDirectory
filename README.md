@@ -12,6 +12,24 @@ Active Directory consists of four essential services that allow it to provide id
 * Active Directory Federation Services (AD FS). As the name suggests, AD FS is a federated identity service that provides single sign-on (SSO) capabilities. It uses many popular protocols such as OAuth, OpenID, and Secure Assertion Markup Language (SAML) to pass credentials between different identity providers. 
 * Active Directory Certificate Services (AD CS). This is a service that creates on-premises public key infrastructure (PKI), allowing organizations to create, validate, and revoke certificates for internal use.
 
+# Domain Controller
+A domain controller is a server that is responsible for allowing network users to authenticate and access network resources, such as file servers and printers, on a Windows domain. It is a central point of control for all users and computers in a Windows domain, and it manages all security-related aspects of the domain.
+
+The domain controller authenticates user login requests and maintains a database of all user accounts and security information for the domain. It is responsible for enforcing security policies and ensuring that only authorized users have access to network resources. When a user logs into a domain, the domain controller verifies the user's credentials and, if they are valid, grants the user access to the network.
+
+Domain controllers are typically installed in an Active Directory infrastructure, which is a centralized directory service that provides a single point of control for managing and organizing network resources. Domain controllers are typically deployed in a hierarchical fashion, with a primary domain controller at the top of the hierarchy and one or more secondary domain controllers beneath it.
+
+In addition to providing authentication and access control services, domain controllers also play a key role in synchronizing data and updating network resources. They communicate with each other to ensure that all domain controllers have the same information and are up to date, and they replicate data between domain controllers to ensure that all domain controllers have access to the same information.
+
+## Difference Between Domain Controller and Active Directory
+
+Domain Controller and Active Directory are closely related and often used interchangeably, but they are not the same thing. Here is the main difference between them:
+
+Domain Controller: A domain controller is a server that is responsible for allowing network users to authenticate and access network resources on a Windows domain. It is a central point of control for all users and computers in a Windows domain, and it manages all security-related aspects of the domain.
+
+Active Directory: Active Directory is a centralized directory service that provides a single point of control for managing and organizing network resources. It is a database that stores information about network resources, such as users, computers, and printers, and provides a way to manage and access these resources.
+
+In Summary,  We can think of Active Directory as a database that stores users and device configurations in AD DS. A domain controller, in contrast, is simply a server running Active Directory that authenticates users and devices. In this regard, you can think of a domain controller as a custodian, facilitator, or host of Active Directory.
 
 1. **How Active Directory, Domain Controller, Site and domain are related?**
 
