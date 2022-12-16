@@ -30,6 +30,19 @@ Domain controllers are typically installed in an Active Directory infrastructure
 
 In addition to providing authentication and access control services, domain controllers also play a key role in synchronizing data and updating network resources. They communicate with each other to ensure that all domain controllers have the same information and are up to date, and they replicate data between domain controllers to ensure that all domain controllers have access to the same information.
 
+How is AD managed?
+
+Active Directory management can be performed on domain controllers via native tools, such as:
+
+* Active Directory Administrative Center
+* Active Directory Domains and Trusts
+* Active Directory Sites and Services
+* Active Directory Users and Computers
+* ADSI Edit
+* Active Directory module for Windows PowerShell
+
+These tools can also be installed on workstations as part of Remote Server Administration Tools (RSAT) to enable admins to manage AD remotely.
+
 ## Difference Between Domain Controller and Active Directory
 
 Domain Controller and Active Directory are closely related and often used interchangeably, but they are not the same thing. Here is the main difference between them:
