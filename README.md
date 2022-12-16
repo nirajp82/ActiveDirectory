@@ -64,6 +64,11 @@ Let’s briefly touch on the physical structure of Active Directory. It can be d
 * Subnets — Network groups with a specified range of IP addresses and a network mask
 * Sites — Groups of one or more subnets used to optimize bandwidth use by the DC replication service
 
+The physical structure(sites) and logical structure (domains) of Active Directory are independent of each other with the following consequences.
+
+* No required relationship between the physical structure of the network and the domain structure of the network
+* Active Directory allows multiple domains in a single site in addition to multiple sites in a single domain
+* There is no necessary connection between site and domain namespaces
 
 ### Domain Controller
 A domain controller is a server that is responsible for allowing network users to authenticate and access network resources, such as file servers and printers, on a Windows domain. It is a central point of control for all users and computers in a Windows domain, and it manages all security-related aspects of the domain.
@@ -75,6 +80,8 @@ The domain controller authenticates user login requests and maintains a database
 Domain controllers are typically installed in an Active Directory infrastructure, which is a centralized directory service that provides a single point of control for managing and organizing network resources. Domain controllers are typically deployed in a hierarchical fashion, with a primary domain controller at the top of the hierarchy and one or more secondary domain controllers beneath it.
 
 In addition to providing authentication and access control services, domain controllers also play a key role in synchronizing data and updating network resources. They communicate with each other to ensure that all domain controllers have the same information and are up to date, and they replicate data between domain controllers to ensure that all domain controllers have access to the same information.
+
+Domain controllers are typically deployed in a hierarchical fashion, with a primary domain controller at the top of the hierarchy and one or more secondary domain controllers beneath it. The primary domain controller is responsible for managing the database and replicating data to the secondary domain controllers, which are responsible for providing authentication and access control services to users.
 
 How is AD managed?
 
