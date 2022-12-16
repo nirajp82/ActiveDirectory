@@ -19,6 +19,14 @@ Active Directory consists of four essential services that allow it to provide id
 * Active Directory Federation Services (AD FS). As the name suggests, AD FS is a federated identity service that provides single sign-on (SSO) capabilities. It uses many popular protocols such as OAuth, OpenID, and Secure Assertion Markup Language (SAML) to pass credentials between different identity providers. 
 * Active Directory Certificate Services (AD CS). This is a service that creates on-premises public key infrastructure (PKI), allowing organizations to create, validate, and revoke certificates for internal use.
 
+Active Directory contains multiple logical units, organized hierarchically. From smallest to largest, they are:
+
+* Objects
+* Organizational units (OUs)
+* Domains
+* Trees
+* Forests
+
 ### Domain Controller
 A domain controller is a server that is responsible for allowing network users to authenticate and access network resources, such as file servers and printers, on a Windows domain. It is a central point of control for all users and computers in a Windows domain, and it manages all security-related aspects of the domain.
 
