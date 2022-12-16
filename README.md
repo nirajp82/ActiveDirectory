@@ -1,4 +1,17 @@
 # ActiveDirectory
+***Active Directory: Identities and Access***
+
+Active Directory is an identity management database that allows IT teams to define what users can do on a network. As a database, Active Directory captures data in the form of objects. An object can be a single resource element, like a user, group, application, or device. 
+
+Each object has associated attributes that allow it to be distinguished from other entities. For example, a user object would have a username, password, and email attributes that distinguish it from other objects. 
+
+Active Directory consists of four essential services that allow it to provide identity and access management:
+
+* Active Directory Domain Services (AD DS). This is the main service within the Active Directory protocol. Besides storing the directory information, it also controls which users can access each enterprise resource and group policies. AD DS uses a tiered structure comprising the domains, trees, and forests to coordinate networked resources.
+* Active Directory Lightweight Directory Services (AD LDS). It shares the same codebase and functionality as AD DS. However, unlike AD DS, AD LDS uses the Lightweight Directory Access Protocol (LDAP), allowing it to run on multiple instances on the same server. 
+* Active Directory Federation Services (AD FS). As the name suggests, AD FS is a federated identity service that provides single sign-on (SSO) capabilities. It uses many popular protocols such as OAuth, OpenID, and Secure Assertion Markup Language (SAML) to pass credentials between different identity providers. 
+* Active Directory Certificate Services (AD CS). This is a service that creates on-premises public key infrastructure (PKI), allowing organizations to create, validate, and revoke certificates for internal use.
+
 
 1. **How Active Directory, Domain Controller, Site and domain are related?**
 
