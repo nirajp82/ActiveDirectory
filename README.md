@@ -22,6 +22,8 @@ Active Directory consists of four essential services that allow it to provide id
 # Domain Controller
 A domain controller is a server that is responsible for allowing network users to authenticate and access network resources, such as file servers and printers, on a Windows domain. It is a central point of control for all users and computers in a Windows domain, and it manages all security-related aspects of the domain.
 
+A domain controller (DC) is a server that runs Active Directory Domain Services and uses data stored in AD for user authentication and authorization, group management, policy administration, and additional functions.
+
 The domain controller authenticates user login requests and maintains a database of all user accounts and security information for the domain. It is responsible for enforcing security policies and ensuring that only authorized users have access to network resources. When a user logs into a domain, the domain controller verifies the user's credentials and, if they are valid, grants the user access to the network.
 
 Domain controllers are typically installed in an Active Directory infrastructure, which is a centralized directory service that provides a single point of control for managing and organizing network resources. Domain controllers are typically deployed in a hierarchical fashion, with a primary domain controller at the top of the hierarchy and one or more secondary domain controllers beneath it.
