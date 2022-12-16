@@ -179,6 +179,8 @@ References:
 * https://ipwithease.com/active-directory-vs-domain-controller/
 * https://jumpcloud.com/blog/domain-controller-vs-active-directory#:~:text=Active%20Directory%20is%20a%20database,that%20authenticates%20users%20and%20devices.
 * https://ipwithease.com/what-is-a-tree-in-active-directory/
+* https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc755809(v=ws.10)?redirectedfrom=MSDN
+* 
 
 
 
