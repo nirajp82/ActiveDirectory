@@ -27,7 +27,8 @@ Active Directory contains multiple logical units, organized hierarchically. From
 * Trees
 * Forests
 
-***Objects***
+***Objects:***
+
 An Active Directory object is the smallest logical unit. Examples include:
 
 * User account
@@ -38,10 +39,24 @@ An Active Directory object is the smallest logical unit. Examples include:
 
 Objects have one or more attributes that define their properties, limits and format. Attribute values can be multi-valued, strings, integers, Boolean (true or false), or other types. The attributes that each object has are specified in the schema.
 
-***Organizational units (OUs)***
+***Organizational units (OUs):***
+
 AD objects within a domain can be grouped into logical containers called organizational units (OUs). OUs are objects too, which allows administrators to create nested OUs. All objects in any given OU must have unique names, and each object can be in only one OU at any given time.
 
 Be careful not to confuse OUs with AD groups. A group is a collection of AD objects, such as users, whose membership in the group grants them certain permissions. A given user can be (and usually is) a member of multiple groups. The confusion typically arises because Group Policy objects (GPOs) can be linked to OUs (but not to groups), which also affects what users, computers and other objects can and cannot do.
+
+***Domains:***
+
+An Active Directory domain is a logical group of objects (users, computers, OUs and so on) that is managed by the same administrative team and is usually located on the same physical network.
+
+***Trees:***
+
+Domains are organized into trees. An AD DS tree consists of multiple domains connected by two-way transitive trusts. Each domain in an AD DS tree shares a common schema and global catalog.
+
+***Forests:***
+
+The Active Directory forest is the highest level of the hierarchy. While domains represent administrative boundaries, forests are the main security boundary for AD DS; it is assumed that all domain administrators within a forest are trusted to some degree. Objects in separate forests are not able to interact with each other unless the administrators of each of those forests create a trust between them.
+
 
 ### Domain Controller
 A domain controller is a server that is responsible for allowing network users to authenticate and access network resources, such as file servers and printers, on a Windows domain. It is a central point of control for all users and computers in a Windows domain, and it manages all security-related aspects of the domain.
