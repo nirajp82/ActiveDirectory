@@ -31,9 +31,7 @@ A directory service is used to store, organize and present data in a key-value t
 
 6. **What is LDAP?**
 
-Lightweight directory access protocol (LDAP) is a protocol that helps users find data about organizations, persons, and more. 
-
-LDAP: Lightweight directory access protocol (LDAP) is a protocol that helps users find data about organizations, persons, and more. Most directory services still use LDAP today, although they may also use additional protocols like Kerberos, SAML, RADIUS, SMB, Oauth, and others. LDAP is based on the standards defined in the X.500 directory service, but is significantly simpler and easier to implement.
+LDAP: LDAP, or Lightweight Directory Access Protocol, is an open protocol used to store and retrieve data from a hierarchical directory structure.  It is based on the X.500 standard however it was not as network intensive as its DAP predecessor and also is designed to be simpler and easier to implement thus it is called lightweight. 
 
 LDAP’s three main functions are:
 
@@ -42,6 +40,13 @@ LDAP’s three main functions are:
 * Authenticate: The main authentication functions include binding and unbinding; a third function, abandon, can be used to stop a server from completing an operation. 
 
 LDAP is commonly used to provide a single sign-on solution for large organizations, allowing users to use a single set of credentials to access multiple systems and resources. It is also often used as a central directory service for storing and managing user information, such as passwords, email addresses, and other personal details.
+
+**LDAP Basic Concepts:**
+
+* LDAP directory structure: LDAP directories are organized in a hierarchical tree-like structure, similar to a file system. Each node in the tree is called an "entry", and entries can have one or more "attributes", which are name-value pairs that contain information about the entry.
+* LDAP operations: LDAP defines a set of operations that can be performed on the directory, such as adding, modifying, and deleting entries, as well as searching for entries based on certain criteria.
+* LDAP protocols and syntax: LDAP uses a number of different protocols and syntaxes to communicate with clients and servers. These include the LDAP Data Interchange Format (LDIF) for importing and exporting data, and the LDAP URL format for specifying search criteria and other options.
+* LDAP authentication: LDAP can be used to authenticate users by storing their credentials (e.g., username and password) in the directory. LDAP can also be used to store information about user permissions and access controls.
 
 LDAP is hierarchical in nature, with a tree-like structure that allows for the organization of information into logical units, such as domains, organizations, and users. It uses a client-server model, with clients accessing directory services on a server using LDAP commands. The server, in turn, accesses directory information from a database, such as a directory server or a relational database management system.
 
