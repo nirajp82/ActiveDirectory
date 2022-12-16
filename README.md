@@ -1,3 +1,10 @@
+# Directory Service
+A directory service is used to store, organize and present data in a key-value type format. Typically, directories are optimized for lookups, searches, and read operations over write operations, so they function extremely well for data that is referenced often but changes infrequently.
+
+For ex: Active Directory is a directory services implementation that provides all sorts of functionality like authentication, group and user management, policy administration and more. Active Directory (AD) supports both Kerberos and LDAP – Microsoft AD is by far the most common directory services system in use today.
+
+a directory service is a general term for a software system that stores and manages information about network resources, while an Active Directory is a specific type of directory service that is used in Windows environments and provides a range of advanced features and capabilities.
+
 # ActiveDirectory
 ***Active Directory: Identities and Access***
 
@@ -56,9 +63,6 @@ An Active Directory site may have more than one domain controller for a few reas
 
 Yes, multiple Active Directory sites can share a common domain controller. In fact, this is a common practice in many organizations, particularly in larger networks with multiple sites. By sharing a common domain controller, multiple sites can take advantage of the benefits of a centralized directory service, such as improved security and ease of management. Additionally, sharing a common domain controller can help to improve the performance and reliability of the directory service, as it can distribute the workload and provide redundant backups of the directory data. Overall, sharing a common domain controller can be a useful way to provide directory services to multiple sites within an organization.
 
-5. What is a Directory Service?
-
-A directory service is used to store, organize and present data in a key-value type format. Typically, directories are optimized for lookups, searches, and read operations over write operations, so they function extremely well for data that is referenced often but changes infrequently.
 
 6. **What is LDAP?**
 
