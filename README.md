@@ -6,6 +6,9 @@ For ex: Active Directory is a directory services implementation that provides al
 a directory service is a general term for a software system that stores and manages information about network resources, while an Active Directory is a specific type of directory service that is used in Windows environments and provides a range of advanced features and capabilities.
 
 ### ActiveDirectory
+
+Active Directory is a directory service that is used to manage and store information about network resources, including users, computers, and other devices, and the relationships between them.
+
 ***Active Directory: Identities and Access***
 
 Active Directory is an identity management database that allows IT teams to define what users can do on a network. As a database, Active Directory captures data in the form of objects. An object can be a single resource element, like a user, group, application, or device. 
