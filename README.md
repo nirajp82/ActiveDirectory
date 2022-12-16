@@ -53,6 +53,14 @@ An Active Directory domain is a logical group of objects (users, computers, OUs 
 
 Domains are organized into trees. An AD DS tree consists of multiple domains connected by two-way transitive trusts. Each domain in an AD DS tree shares a common schema and global catalog.
 
+Every domain in the tree lives on the foundation of trust, which is a two-way process, meaning that as soon as a domain is created, the resources of that nascent (New) domain is by default shared with its parent domain. This allows the user to access both the resources of parent and child domains. So, simply put, if an A domain trusts B domain and B Domain shows trust on C domain, then automatically A domain trusts C domain and likewise, all domains trust each other in the Active Directory.
+
+EXAMPLE:-
+There is a parent domain called abc.com, so all other child domains branching out will bear their specific names, followed by the parent domain’s name. Like accounts.abc.com, sales.abc.com, payment.abc.com, etc. And, furthermore, these child domains can also have other multiple domains established under them, like north.sales.abc.com or north.payment.abc.com.
+
+![image](https://user-images.githubusercontent.com/61636643/208169282-8e20e1df-0470-441a-973f-271248e1a2f9.png)
+
+
 ***Forests:***
 
 The Active Directory forest is the highest level of the hierarchy. While domains represent administrative boundaries, forests are the main security boundary for AD DS; it is assumed that all domain administrators within a forest are trusted to some degree. Objects in separate forests are not able to interact with each other unless the administrators of each of those forests create a trust between them.
