@@ -27,6 +27,23 @@ Active Directory contains multiple logical units, organized hierarchically. From
 * Trees
 * Forests
 
+***Objects***
+An Active Directory object is the smallest logical unit. Examples include:
+
+* User account
+* Computer account
+* Group
+* Printer
+* Share
+
+Objects have one or more attributes that define their properties, limits and format. Attribute values can be multi-valued, strings, integers, Boolean (true or false), or other types. The attributes that each object has are specified in the schema.
+
+***Organizational units (OUs)***
+AD objects within a domain can be grouped into logical containers called organizational units (OUs). OUs are objects too, which allows administrators to create nested OUs. All objects in any given OU must have unique names, and each object can be in only one OU at any given time.
+
+Be careful not to confuse OUs with AD groups. A group is a collection of AD objects, such as users, whose membership in the group grants them certain permissions. A given user can be (and usually is) a member of multiple groups. The confusion typically arises because Group Policy objects (GPOs) can be linked to OUs (but not to groups), which also affects what users, computers and other objects can and cannot do.
+
+
 ### Domain Controller
 A domain controller is a server that is responsible for allowing network users to authenticate and access network resources, such as file servers and printers, on a Windows domain. It is a central point of control for all users and computers in a Windows domain, and it manages all security-related aspects of the domain.
 
