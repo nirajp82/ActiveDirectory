@@ -34,9 +34,9 @@ LDAP: Lightweight directory access protocol (LDAP) is a protocol that helps user
 
 LDAP’s three main functions are:
 
-Update: This includes adding, deleting, or modifying directory information.
-Query: This includes searching and comparing directory information.
-Authenticate: The main authentication functions include binding and unbinding; a third function, abandon, can be used to stop a server from completing an operation. 
+* Update: This includes adding, deleting, or modifying directory information.
+* Query: This includes searching and comparing directory information.
+* Authenticate: The main authentication functions include binding and unbinding; a third function, abandon, can be used to stop a server from completing an operation. 
 
 LDAP is commonly used to provide a single sign-on solution for large organizations, allowing users to use a single set of credentials to access multiple systems and resources. It is also often used as a central directory service for storing and managing user information, such as passwords, email addresses, and other personal details.
 
