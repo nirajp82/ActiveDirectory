@@ -174,6 +174,22 @@ LDAP is hierarchical in nature, with a tree-like structure that allows for the o
 
 LDAP uses simple authentication and security mechanisms, making it easy to implement and use, but it also has some limitations, such as the lack of support for encryption and the inability to handle very large directory structures. Overall, LDAP is a useful and widely-used protocol for managing directory information and providing single sign-on capabilities in large organizations.
 
+**Difference between Kerberos and LDAP in Active Directory?**
+
+Kerberos is the default authentication (and authorization) protocol used by Active Directory, though it is classically thought of as an authentication protocol only.  Kerberos is platform-independent and was invented at MIT, and Microsoft later adopted it beginning Windows 2000 Active Directory to provide you single sign-on access (which means you only enter your password one time when you first logon) to subsequent network resources on your network and not challenge you again for a username and password.  Kerberos is involved in nearly everything, from the moment you first logon to access your computer, to accessing the SYSVOL share on Domain Controllers, by handing out what are known as tickets, which are encrypted.  Kerberos largely replaced NTLM, an older and Microsoft’s original (with Windows NT) authentication protocol. Kerberos uses secret key cryptography to provide strong authentication for client/server applications.
+
+
+LDAP is also an authentication and authorization protocol, and also methodology of organizing objects such as users, computers, and organizational units within a directory, such as Active Directory.  It is basically the list view of what you see when you open up the Active Directory Users and Computers console. 
+
+
+Kerberos is more secure than LDAP, and they are often used together.  For example, when you open up the Active Directory Users and Computers console, your computer first obtains a ticket to access your Domain Controller and then uses LDAP to actually use the console itself when working with objects such as users or OUs.  Kerberos and LDAP allow you to run a heterogeneous network of Windows, Linux, UNIX and even Apple Mac clients on a Microsoft Active Directory network.
+
+
+Security: Both Kerberos and LDAP are designed to provide secure access to network resources. Kerberos uses secret key cryptography to provide strong authentication, while LDAP supports secure communication using Transport Layer Security (TLS) or Secure Sockets Layer (SSL).
+
+
+Overall, Kerberos and LDAP are two different technologies that are used in conjunction with Active Directory to provide secure and efficient access to network resources. Kerberos is used for authentication, while LDAP is used for accessing and managing information stored in the directory service.
+
 References:
 * https://www.digitalocean.com/community/tutorials/understanding-the-ldap-protocol-data-hierarchy-and-entry-components
 * https://ipwithease.com/active-directory-vs-domain-controller/
