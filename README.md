@@ -25,8 +25,11 @@ An Active Directory site may have more than one domain controller for a few reas
 
 Yes, multiple Active Directory sites can share a common domain controller. In fact, this is a common practice in many organizations, particularly in larger networks with multiple sites. By sharing a common domain controller, multiple sites can take advantage of the benefits of a centralized directory service, such as improved security and ease of management. Additionally, sharing a common domain controller can help to improve the performance and reliability of the directory service, as it can distribute the workload and provide redundant backups of the directory data. Overall, sharing a common domain controller can be a useful way to provide directory services to multiple sites within an organization.
 
+5. What is a Directory Service?
 
-5. **What is LDAP?**
+A directory service is used to store, organize and present data in a key-value type format. Typically, directories are optimized for lookups, searches, and read operations over write operations, so they function extremely well for data that is referenced often but changes infrequently.
+
+6. **What is LDAP?**
 
 Lightweight directory access protocol (LDAP) is a protocol that helps users find data about organizations, persons, and more. 
 
