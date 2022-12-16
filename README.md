@@ -62,6 +62,10 @@ There is a parent domain called abc.com, so all other child domains branching ou
 
 ***Forests:***
 
+A Active Directory Forest is the collection of more than one domain trees having different name spaces or roots. This means that the forest contains a number of domain trees that do not share a common name space, and also do not have the same parent domain.
+
+But, for all the trees in the forest, there is one common configuration and global catalogue.
+
 The Active Directory forest is the highest level of the hierarchy. While domains represent administrative boundaries, forests are the main security boundary for AD DS; it is assumed that all domain administrators within a forest are trusted to some degree. Objects in separate forests are not able to interact with each other unless the administrators of each of those forests create a trust between them.
 
 Every Active Directory has at least one forest. Organizations can choose to have two or more Active Directory forests, or they might end up with multiple forests due to merger and acquisition (M&A) deals.
