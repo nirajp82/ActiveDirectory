@@ -1,11 +1,11 @@
-# Directory Service
+### Directory Service
 A directory service is used to store, organize and present data in a key-value type format. Typically, directories are optimized for lookups, searches, and read operations over write operations, so they function extremely well for data that is referenced often but changes infrequently.
 
 For ex: Active Directory is a directory services implementation that provides all sorts of functionality like authentication, group and user management, policy administration and more. Active Directory (AD) supports both Kerberos and LDAP – Microsoft AD is by far the most common directory services system in use today.
 
 a directory service is a general term for a software system that stores and manages information about network resources, while an Active Directory is a specific type of directory service that is used in Windows environments and provides a range of advanced features and capabilities.
 
-# ActiveDirectory
+### ActiveDirectory
 ***Active Directory: Identities and Access***
 
 Active Directory is an identity management database that allows IT teams to define what users can do on a network. As a database, Active Directory captures data in the form of objects. An object can be a single resource element, like a user, group, application, or device. 
@@ -19,10 +19,10 @@ Active Directory consists of four essential services that allow it to provide id
 * Active Directory Federation Services (AD FS). As the name suggests, AD FS is a federated identity service that provides single sign-on (SSO) capabilities. It uses many popular protocols such as OAuth, OpenID, and Secure Assertion Markup Language (SAML) to pass credentials between different identity providers. 
 * Active Directory Certificate Services (AD CS). This is a service that creates on-premises public key infrastructure (PKI), allowing organizations to create, validate, and revoke certificates for internal use.
 
-# Domain Controller
+### Domain Controller
 A domain controller is a server that is responsible for allowing network users to authenticate and access network resources, such as file servers and printers, on a Windows domain. It is a central point of control for all users and computers in a Windows domain, and it manages all security-related aspects of the domain.
 
-A domain controller (DC) is a server that runs Active Directory Domain Services and uses data stored in AD for user authentication and authorization, group management, policy administration, and additional functions.
+A domain controller (DC) is a server that runs Active Directory Domain Services and uses data stored in AD for user authentication and authorization, group management, policy administration, and additional functions.  In practice, organizations typically have multiple domain controllers in on-premises datacenters and/or in the cloud. Each DC in a domain maintains a copy of the AD database, and they synchronize data between themselves using Active Directory replication. DCs can also store the global catalog — a read-only registry of all objects in the domain’s directory and a partial copy of all objects in all other domains in the forest to facilitate searches for information about objects. A DC with this feature enabled is called a global catalog server. The primary access protocol for Active Directory is Lightweight Directory Access Protocol (LDAP).
 
 The domain controller authenticates user login requests and maintains a database of all user accounts and security information for the domain. It is responsible for enforcing security policies and ensuring that only authorized users have access to network resources. When a user logs into a domain, the domain controller verifies the user's credentials and, if they are valid, grants the user access to the network.
 
