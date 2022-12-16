@@ -57,6 +57,13 @@ Domains are organized into trees. An AD DS tree consists of multiple domains con
 
 The Active Directory forest is the highest level of the hierarchy. While domains represent administrative boundaries, forests are the main security boundary for AD DS; it is assumed that all domain administrators within a forest are trusted to some degree. Objects in separate forests are not able to interact with each other unless the administrators of each of those forests create a trust between them.
 
+***Physical Structure:***
+
+Let’s briefly touch on the physical structure of Active Directory. It can be divided into:
+* Hosts — Devices connected to the domain network
+* Subnets — Network groups with a specified range of IP addresses and a network mask
+* Sites — Groups of one or more subnets used to optimize bandwidth use by the DC replication service
+
 
 ### Domain Controller
 A domain controller is a server that is responsible for allowing network users to authenticate and access network resources, such as file servers and printers, on a Windows domain. It is a central point of control for all users and computers in a Windows domain, and it manages all security-related aspects of the domain.
