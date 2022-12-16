@@ -28,7 +28,15 @@ Yes, multiple Active Directory sites can share a common domain controller. In fa
 
 5. **What is LDAP?**
 
-LDAP, or Lightweight Directory Access Protocol, is a protocol for accessing and maintaining distributed directory information services over an IP network. It provides a mechanism for connecting to, searching, and modifying directory services over a network. LDAP is based on the standards defined in the X.500 directory service, but is significantly simpler and easier to implement.
+Lightweight directory access protocol (LDAP) is a protocol that helps users find data about organizations, persons, and more. 
+
+LDAP: Lightweight directory access protocol (LDAP) is a protocol that helps users find data about organizations, persons, and more. Most directory services still use LDAP today, although they may also use additional protocols like Kerberos, SAML, RADIUS, SMB, Oauth, and others. LDAP is based on the standards defined in the X.500 directory service, but is significantly simpler and easier to implement.
+
+LDAP’s three main functions are:
+
+Update: This includes adding, deleting, or modifying directory information.
+Query: This includes searching and comparing directory information.
+Authenticate: The main authentication functions include binding and unbinding; a third function, abandon, can be used to stop a server from completing an operation. 
 
 LDAP is commonly used to provide a single sign-on solution for large organizations, allowing users to use a single set of credentials to access multiple systems and resources. It is also often used as a central directory service for storing and managing user information, such as passwords, email addresses, and other personal details.
 
