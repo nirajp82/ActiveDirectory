@@ -60,10 +60,14 @@ There is a parent domain called abc.com, so all other child domains branching ou
 
 ![image](https://user-images.githubusercontent.com/61636643/208169282-8e20e1df-0470-441a-973f-271248e1a2f9.png)
 
-
 ***Forests:***
 
 The Active Directory forest is the highest level of the hierarchy. While domains represent administrative boundaries, forests are the main security boundary for AD DS; it is assumed that all domain administrators within a forest are trusted to some degree. Objects in separate forests are not able to interact with each other unless the administrators of each of those forests create a trust between them.
+
+Every Active Directory has at least one forest. Organizations can choose to have two or more Active Directory forests, or they might end up with multiple forests due to merger and acquisition (M&A) deals.
+
+![image](https://user-images.githubusercontent.com/61636643/208174095-a45dc306-6de0-43e2-bb8c-78fd034d88ce.png)
+
 
 ***Physical Structure:***
 
