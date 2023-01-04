@@ -150,6 +150,11 @@ An Active Directory site may have more than one domain controller for a few reas
 
 Yes, multiple Active Directory sites can share a common domain controller. In fact, this is a common practice in many organizations, particularly in larger networks with multiple sites. By sharing a common domain controller, multiple sites can take advantage of the benefits of a centralized directory service, such as improved security and ease of management. Additionally, sharing a common domain controller can help to improve the performance and reliability of the directory service, as it can distribute the workload and provide redundant backups of the directory data. Overall, sharing a common domain controller can be a useful way to provide directory services to multiple sites within an organization.
 
+5. **Relationship between Domain Controller and AD DS server role.**
+
+The Active Directory Domain Services (AD DS) server role is a role that is installed on a domain controller and enables the domain controller to store and manage the Active Directory database. It also allows the domain controller to provide other services, such as LDAP and Kerberos authentication, DNS, and group policy management.
+
+In short, a domain controller is a server that runs the AD DS server role and is responsible for managing access to a network and enforcing security policies for a domain by storing and replicating the Active Directory database.
 
 6. **What is LDAP?**
 
