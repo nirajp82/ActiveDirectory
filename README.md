@@ -65,7 +65,7 @@ There is a parent domain called abc.com, so all other child domains branching ou
 
 ***Forests:***
 
-A Active Directory Forest is the collection of more than one domain trees having different name spaces or roots. This means that the forest contains a number of domain trees that do not share a common name space, and also do not have the same parent domain.
+A Active Directory Forest is the collection of more than one domain trees having different name spaces or roots. This means that the forest contains a number of domain trees that do not share a common name space, and also do not have the same parent domain.  When multiple trees are grouped together they become a forest.
 
 But, for all the trees in the forest, there is one common configuration and global catalogue.
 
@@ -163,17 +163,11 @@ In short, a domain controller is a server that runs the AD DS server role and is
 * Domain Controllers: Domain Controllers are servers that run the Active Directory Domain Services (AD DS) role and provide authentication and authorization services to clients. They maintain a copy of the Active Directory database and replicate directory changes to other domain controllers in the same domain.
    *  For example, ACME Corporation might have multiple domain controllers in different locations to provide redundancy and fault tolerance. The domain controllers would authenticate users, manage user accounts, and maintain the directory database for their respective domains.
 	
-* Forest: A forest is a collection of one or more domains that share a common schema, configuration, and global catalog. A forest is identified by a forest name and is managed by one or more domain controllers.
-  * For example, ACME Corporation might have multiple forests to manage its different business units or subsidiaries. The Finance department might have its own forest called "finance.acme.com," while the Marketing department might have its own forest called "marketing.acme.com."	
-
 * Domains: A domain is a logical group of network resources that share a common directory database and security policies. Each domain is identified by a unique name and is managed by one or more domain controllers.
   * For example, ACME Corporation might have multiple departments, such as Finance, Marketing, and IT. Each department might have its own domain to manage its resources and security policies. The Finance department might have a domain called "finance.acme.com," while the Marketing department might have a domain called "marketing.acme.com."
 
 * Sites: A site is a physical location that contains one or more domain controllers and network resources. Sites are used to manage network traffic and optimize network performance by ensuring that clients connect to the closest domain controller.
   * For example, ACME Corporation might have offices in different cities, such as New York, Delhi, and Tokyo. Each office might have its own site, which would contain one or more domain controllers and network resources. The site in New York might have two domain controllers, while the site in Delhi might have three domain controllers.
-
-* Trust Relationships: A trust relationship allows users in one domain to access resources in another domain. Trust relationships can be established between domains in the same forest or between domains in different forests.
-  * For example, ACME Corporation might acquire a smaller company called Widget Corp. that has its own AD domain. A trust relationship can be established between the ACME Corporation domain and the Widget Corp. domain to allow users in both domains to access resources in the other domain.
 
 * Global Catalog: The Global Catalog is a distributed data store that contains a subset of the Active Directory database. It stores information about every object in the forest, including user accounts, groups, and computers. The Global Catalog is used to support forest-wide searches and to locate domain controllers.
   * For example, a user in the Finance department of ACME Corporation might need to find a user account in the Marketing department. The user can perform a forest-wide search using the Global Catalog to locate the account.
@@ -181,8 +175,18 @@ In short, a domain controller is a server that runs the AD DS server role and is
 * Organizational Units (OUs): An Organizational Unit is a container object that can be used to organize other objects in the directory, such as user accounts, computers, and groups.
   * For example, ACME Corporation might use OUs to organize its resources in a logical hierarchy. The Finance department might have an OU called "Finance Users" to contain all the user accounts in the finance department, while the IT department might have an OU called "IT Computers" to contain all the computer objects in the IT department.
 
-* Trees: A tree is a collection of one or more domains in a contiguous namespace that share a common domain name. Trees are used to simplify domain naming and to establish trust relationships between domains.
+* Trees: A tree is a collection of one or more domains in a contiguous namespace that share a common domain name. Trees are used to simplify domain naming and to establish trust relationships between domains. a tree is an entity with a single domain or group of objects that is followed by child domains.
   * For example, ACME Corporation might have a domain called "acme.com" and a child domain called "finance.acme.com." The two domains would form a tree because they share a common domain name.
+
+* Forest: A forest is a collection of one or more domains that share a common schema, configuration, and global catalog. A forest is identified by a forest name and is managed by one or more domain controllers. When multiple trees are grouped together they become a forest.
+  * For example, ACME Corporation might have multiple forests to manage its different business units or subsidiaries. The Finance department might have its own forest called "finance.acme.com," while the Marketing department might have its own forest called "marketing.acme.com."	
+
+* Trust Relationships: A trust relationship allows users in one domain to access resources in another domain. Trust relationships can be established between domains in the same forest or between domains in different forests. Trees in the forest connect to each other through a trust relationship, which enables different domains to share information. All domains will trust each other automatically so you can access them with the same account info you used on the root domain.
+	Trusts are used to facilitate communication between domains. Trusts enable authentication and access to resources between two entities. Trusts can be one-way or two-way in nature. Within a trust, the two domains are divided into a trusting domain and a trusted domain.
+	In a one-way trust, the trusting domain accesses the authentication details of the trusted domain so that the user can access resources from the other domain. In a two-way trust, both domains will accept the other’s authentication details. All domains within a forest trust each other automatically, but you can also set up trusts between domains in different forests to transfer information.
+	![image](https://user-images.githubusercontent.com/61636643/222268930-b59192d9-b811-463b-8b31-d01786170066.png)
+
+  * For example, ACME Corporation might acquire a smaller company called Widget Corp. that has its own AD domain. A trust relationship can be established between the ACME Corporation domain and the Widget Corp. domain to allow users in both domains to access resources in the other domain.
 
 In summary, an Active Directory setup is a complex system with many different components that work together to manage network resources and provide authentication and authorization services to clients. The Active Directory database is at the center of the system, and domain controllers are used to maintain and replicate the database. Domains, sites, trust relationships, and the Global Catalog are used to manage network resources and optimize network performance, while forests and OUs are used to organize resources in a logical hierarchy. Trees are used to simplify domain naming and establish trust relationships between domains.
 
@@ -231,7 +235,7 @@ References:
 * https://jumpcloud.com/blog/domain-controller-vs-active-directory#:~:text=Active%20Directory%20is%20a%20database,that%20authenticates%20users%20and%20devices.
 * https://ipwithease.com/what-is-a-tree-in-active-directory/
 * https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc755809(v=ws.10)?redirectedfrom=MSDN
-* 
+* https://www.comparitech.com/net-admin/active-directory-step-by-step-tutorial/
 
 
 
