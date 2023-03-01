@@ -156,6 +156,36 @@ The Active Directory Domain Services (AD DS) server role is a role that is insta
 
 In short, a domain controller is a server that runs the AD DS server role and is responsible for managing access to a network and enforcing security policies for a domain by storing and replicating the Active Directory database.
 
+# Real world enterprise active directory setup
+* Active Directory: Active Directory is a database that stores information about users, computers, and other network resources. It is the central component of an AD setup and provides authentication, authorization, and resource management services to clients.
+  * For example, let's say that a large multinational company, ACME Corporation, has an AD setup to manage its network resources. The Active Directory database would store information about all the users, computers, and other network resources in the organization.
+
+* Domain Controllers: Domain Controllers are servers that run the Active Directory Domain Services (AD DS) role and provide authentication and authorization services to clients. They maintain a copy of the Active Directory database and replicate directory changes to other domain controllers in the same domain.
+   *  For example, ACME Corporation might have multiple domain controllers in different locations to provide redundancy and fault tolerance. The domain controllers would authenticate users, manage user accounts, and maintain the directory database for their respective domains.
+	
+* Forest: A forest is a collection of one or more domains that share a common schema, configuration, and global catalog. A forest is identified by a forest name and is managed by one or more domain controllers.
+  * For example, ACME Corporation might have multiple forests to manage its different business units or subsidiaries. The Finance department might have its own forest called "finance.acme.com," while the Marketing department might have its own forest called "marketing.acme.com."	
+
+* Domains: A domain is a logical group of network resources that share a common directory database and security policies. Each domain is identified by a unique name and is managed by one or more domain controllers.
+  * For example, ACME Corporation might have multiple departments, such as Finance, Marketing, and IT. Each department might have its own domain to manage its resources and security policies. The Finance department might have a domain called "finance.acme.com," while the Marketing department might have a domain called "marketing.acme.com."
+
+* Sites: A site is a physical location that contains one or more domain controllers and network resources. Sites are used to manage network traffic and optimize network performance by ensuring that clients connect to the closest domain controller.
+  * For example, ACME Corporation might have offices in different cities, such as New York, Delhi, and Tokyo. Each office might have its own site, which would contain one or more domain controllers and network resources. The site in New York might have two domain controllers, while the site in Delhi might have three domain controllers.
+
+* Trust Relationships: A trust relationship allows users in one domain to access resources in another domain. Trust relationships can be established between domains in the same forest or between domains in different forests.
+  * For example, ACME Corporation might acquire a smaller company called Widget Corp. that has its own AD domain. A trust relationship can be established between the ACME Corporation domain and the Widget Corp. domain to allow users in both domains to access resources in the other domain.
+
+* Global Catalog: The Global Catalog is a distributed data store that contains a subset of the Active Directory database. It stores information about every object in the forest, including user accounts, groups, and computers. The Global Catalog is used to support forest-wide searches and to locate domain controllers.
+  * For example, a user in the Finance department of ACME Corporation might need to find a user account in the Marketing department. The user can perform a forest-wide search using the Global Catalog to locate the account.
+
+* Organizational Units (OUs): An Organizational Unit is a container object that can be used to organize other objects in the directory, such as user accounts, computers, and groups.
+  * For example, ACME Corporation might use OUs to organize its resources in a logical hierarchy. The Finance department might have an OU called "Finance Users" to contain all the user accounts in the finance department, while the IT department might have an OU called "IT Computers" to contain all the computer objects in the IT department.
+
+* Trees: A tree is a collection of one or more domains in a contiguous namespace that share a common domain name. Trees are used to simplify domain naming and to establish trust relationships between domains.
+  * For example, ACME Corporation might have a domain called "acme.com" and a child domain called "finance.acme.com." The two domains would form a tree because they share a common domain name.
+
+In summary, an Active Directory setup is a complex system with many different components that work together to manage network resources and provide authentication and authorization services to clients. The Active Directory database is at the center of the system, and domain controllers are used to maintain and replicate the database. Domains, sites, trust relationships, and the Global Catalog are used to manage network resources and optimize network performance, while forests and OUs are used to organize resources in a logical hierarchy. Trees are used to simplify domain naming and establish trust relationships between domains.
+
 6. **What is LDAP?**
 
 LDAP:  LDAP, or Lightweight Directory Access Protocol, is an open protocol.  LDAP allows clients to connect to the directory service and request information about specific resources or groups of resources. LDAP can also be used to modify the information stored in the directory service, such as adding or deleting user accounts or changing the permissions associated with a particular resource.  It is based on the X.500 standard however it was not as network intensive as its DAP predecessor and also is designed to be simpler and easier to implement thus it is called lightweight. 
