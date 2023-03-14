@@ -236,7 +236,7 @@ References:
 * https://ipwithease.com/what-is-a-tree-in-active-directory/
 * https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc755809(v=ws.10)?redirectedfrom=MSDN
 * https://www.comparitech.com/net-admin/active-directory-step-by-step-tutorial/
-
+* https://www.codeproject.com/Articles/18102/Howto-Almost-Everything-In-Active-Directory-via-C?display=Print
 
 
 
