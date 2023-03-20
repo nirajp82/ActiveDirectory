@@ -181,7 +181,7 @@ In short, a domain controller is a server that runs the AD DS server role and is
 	* User Logon:In a multi-domain forest, a global catalog server is required during user logon in the following scenarios:
 	Domain controllers request universal group membership from global catalog servers. This can be prevented by using Universal Group Membership caching.
 	When a User Principal Name (UPN) is used to login, the global catalog server is required to resolve the name (i.e. it is required to determine what domain in the forest the user is a member of)
-https://techiemaster.files.wordpress.com/2016/07/ic196496.gif?w=403
+![image](https://user-images.githubusercontent.com/61636643/226441007-0df5c0b8-273b-4967-8e49-a22c5921f4c9.png)
 
 * Organizational Units (OUs): An Organizational Unit is a container object that can be used to organize other objects in the directory, such as user accounts, computers, and groups.
   * For example, ACME Corporation might use OUs to organize its resources in a logical hierarchy. The Finance department might have an OU called "Finance Users" to contain all the user accounts in the finance department, while the IT department might have an OU called "IT Computers" to contain all the computer objects in the IT department.
