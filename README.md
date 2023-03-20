@@ -172,8 +172,16 @@ In short, a domain controller is a server that runs the AD DS server role and is
 * Sites: A site is a physical location that contains one or more domain controllers and network resources. Sites are used to manage network traffic and optimize network performance by ensuring that clients connect to the closest domain controller.
   * For example, ACME Corporation might have offices in different cities, such as New York, Delhi, and Tokyo. Each office might have its own site, which would contain one or more domain controllers and network resources. The site in New York might have two domain controllers, while the site in Delhi might have three domain controllers.
 
-* Global Catalog: The Global Catalog is a distributed data store that contains a subset of the Active Directory database. It stores information about every object in the forest, including user accounts, groups, and computers. The Global Catalog is used to support forest-wide searches and to locate domain controllers.
+* Global Catalog: The global catalog is a distributed data repository that contains a searchable, partial representation of every object in every domain within an Active Directory Forest, including user accounts, groups, and computers. The Global Catalog is used to support forest-wide searches and to locate domain controllers. The global catalog is stored on domain controllers that have been designated as global catalog servers and is distributed through multi-master replication. Searches that are directed to the global catalog are faster because they do not involve referrals to different domain controllers.
+	A global catalog server is a domain controller that, in addition to its full, writable domain directory partition replica, also stores a partial, read-only replica of all other domain directory partitions in the forest. The additional domain directory partitions are partial because only a limited set of attributes are included for each object. By including only the attributes that are most used for searching, every object in every domain in even the largest forest can be represented in the database of a single global catalog server.
   * For example, a user in the Finance department of ACME Corporation might need to find a user account in the Marketing department. The user can perform a forest-wide search using the Global Catalog to locate the account.
+  * When is it used?
+	The Active Directory Global Catalog server is used in the following situations:
+	* Forest-wide searches:The global catalog provides a resource for searching an AD DS forest. Forest-wide searches are identified by the LDAP port that they use. If the search query uses port 3268, the query is sent to a global catalog server.
+	* User Logon:In a multi-domain forest, a global catalog server is required during user logon in the following scenarios:
+	Domain controllers request universal group membership from global catalog servers. This can be prevented by using Universal Group Membership caching.
+	When a User Principal Name (UPN) is used to login, the global catalog server is required to resolve the name (i.e. it is required to determine what domain in the forest the user is a member of)
+https://techiemaster.files.wordpress.com/2016/07/ic196496.gif?w=403
 
 * Organizational Units (OUs): An Organizational Unit is a container object that can be used to organize other objects in the directory, such as user accounts, computers, and groups.
   * For example, ACME Corporation might use OUs to organize its resources in a logical hierarchy. The Finance department might have an OU called "Finance Users" to contain all the user accounts in the finance department, while the IT department might have an OU called "IT Computers" to contain all the computer objects in the IT department.
@@ -241,6 +249,7 @@ References:
 * https://www.comparitech.com/net-admin/active-directory-step-by-step-tutorial/
 * https://www.codeproject.com/Articles/18102/Howto-Almost-Everything-In-Active-Directory-via-C?display=Print
 * https://www.samba.org/samba/docs/old/Samba3-HOWTO/samba-pdc.html
+* https://techiemaster.wordpress.com/2016/07/18/what-is-active-directory-global-catalog-server/
 
 
 
