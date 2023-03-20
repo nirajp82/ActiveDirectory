@@ -50,7 +50,9 @@ Be careful not to confuse OUs with AD groups. A group is a collection of AD obje
 
 ***Domains:***
 
-An Active Directory domain is a logical group of objects (users, computers, OUs and so on) that is managed by the same administrative team and is usually located on the same physical network.
+An Active Directory domain is a logical group of objects (users, computers, OUs and so on) that is managed by the same administrative team and is usually located on the same physical network. One domain can have multiple domain controller.  We can not share domain controllor among multiple domains. Wu cannot have multiple domains on a domain controller. You can only have one domain per DC.
+![image](https://user-images.githubusercontent.com/61636643/226438550-d86a7e02-7826-499b-a933-42e27ac96a9e.png)
+
 
 ***Trees:***
 
