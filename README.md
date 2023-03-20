@@ -162,11 +162,12 @@ In short, a domain controller is a server that runs the AD DS server role and is
 * Active Directory: Active Directory is a database that stores information about users, computers, and other network resources. It is the central component of an AD setup and provides authentication, authorization, and resource management services to clients.
   * For example, let's say that a large multinational company, ACME Corporation, has an AD setup to manage its network resources. The Active Directory database would store information about all the users, computers, and other network resources in the organization.
 
-* Domain Controllers: Domain Controllers are servers that run the Active Directory Domain Services (AD DS) role and provide authentication and authorization services to clients. They maintain a copy of the Active Directory database and replicate directory changes to other domain controllers in the same domain.
-   *  For example, ACME Corporation might have multiple domain controllers in different locations to provide redundancy and fault tolerance. The domain controllers would authenticate users, manage user accounts, and maintain the directory database for their respective domains.
-	
 * Domains: A domain is a logical group of network resources that share a common directory database and security policies. Each domain is identified by a unique name and is managed by one or more domain controllers.
   * For example, ACME Corporation might have multiple departments, such as Finance, Marketing, and IT. Each department might have its own domain to manage its resources and security policies. The Finance department might have a domain called "finance.acme.com," while the Marketing department might have a domain called "marketing.acme.com."
+   We can not share domain controllor among multiple domains. Wu cannot have multiple domains on a domain controller. You can only have one domain per DC.
+   
+* Domain Controllers: Domain Controllers are servers that run the Active Directory Domain Services (AD DS) role and provide authentication and authorization services to clients. They maintain a copy of the Active Directory database and replicate directory changes to other domain controllers in the same domain.
+   *  For example, ACME Corporation might have multiple domain controllers in different locations to provide redundancy and fault tolerance. The domain controllers would authenticate users, manage user accounts, and maintain the directory database for their respective domains.
 
 * Sites: A site is a physical location that contains one or more domain controllers and network resources. Sites are used to manage network traffic and optimize network performance by ensuring that clients connect to the closest domain controller.
   * For example, ACME Corporation might have offices in different cities, such as New York, Delhi, and Tokyo. Each office might have its own site, which would contain one or more domain controllers and network resources. The site in New York might have two domain controllers, while the site in Delhi might have three domain controllers.
