@@ -1,5 +1,6 @@
 ### How to install and configure Active Directory & DNS Services Windows Server 2019
 * https://www.youtube.com/watch?v=8teMFArShR8&ab_channel=InfoSecPat 
+* https://www.youtube.com/watch?v=0tONNzREopw&ab_channel=sysadmintutorials
 
 * Log on to the Windows Server 2019 machine as an administrator.
 * Open the Server Manager by clicking the "Server Manager" icon on the taskbar or by clicking the Start button and typing "Server Manager".
