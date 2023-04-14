@@ -1,5 +1,7 @@
 * How domanin controller selection works:
+   
    https://concurrency.com/blog/may-2018/domain-controller-selection
+   
    When a member server or workstation needs to find a domain controller, it goes through the following steps:
    * Query the primary DNS server for the all domain controller SRV records in the domain (These have the format of "_ldap._tcp.mydomain.local").
       This will return an entry for each DC in the domain.  For example, this screenshot shows the lookup result for a domain with 2 DCs, named MGLABDC4 and MGLABDC5:
