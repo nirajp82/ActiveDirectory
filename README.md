@@ -104,7 +104,18 @@ In addition to providing authentication and access control services, domain cont
 
 Domain controllers are typically deployed in a hierarchical fashion, with a primary domain controller at the top of the hierarchy and one or more secondary domain controllers beneath it. The primary domain controller is responsible for managing the database and replicating data to the secondary domain controllers, which are responsible for providing authentication and access control services to users.
 
-How is AD managed?
+### Site
+In Microsoft Active Directory, a site is a logical grouping of network resources that are physically close to each other and connected by high-speed network links. Sites are typically used to improve network performance by reducing network traffic across slower links.
+While it is recommended that domain controllers are placed in a site, it is not strictly necessary. However, if a domain controller is not assigned to a site, it may not be able to provide optimal network performance and may not function properly in some circumstances.
+
+	A site in Active Directory contains information about the following:
+	* Subnets: A subnet is a range of IP addresses that identify a portion of a network. Active Directory uses subnet information to determine which domain controllers are located in a particular site. This information is used to direct authentication requests and other network traffic to the appropriate domain controller.
+	* Domain controllers: A site contains one or more domain controllers that are located within the site's boundaries. Domain controllers store a copy of the Active Directory database and provide authentication and authorization services for the domain.
+	* Site links: Site links are connections between sites that enable replication of Active Directory data between domain controllers in different sites. Site links are used to control the flow of replication traffic between sites and to optimize network performance.
+	* Global Catalog servers: A Global Catalog server is a domain controller that contains a partial copy of all the objects in the Active Directory forest. The Global Catalog is used to locate objects in the directory, such as users, groups, and resources.
+
+
+## How is AD managed?
 
 Active Directory management can be performed on domain controllers via native tools, such as:
 
