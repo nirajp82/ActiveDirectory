@@ -1,4 +1,4 @@
-* How domanin controller selection works:
+* ## How domanin controller selection works:
    
    https://concurrency.com/blog/may-2018/domain-controller-selection
    
@@ -17,8 +17,16 @@
    * Cache the name of the local site in the registry to speed up future operations
    
    If the client attempts to contact a DC that's offline, it will try to contact the next one in the list until all results are exhausted.
+   
+   For ex:, A user attempts to access a resource on the network, such as a file share or a printer.
+   * The client computer sends an authentication request to a domain controller.
+   * The domain controller checks its own site to see if it is the closest domain controller to the client.
+   * If the domain controller is located in the same site as the client, it processes the authentication request immediately.
+   * If the domain controller is not located in the same site as the client, it refers the client to a domain controller in the nearest site.
+   * Once the client is authenticated, it is granted access to the requested resource.
 
-* How to get list of domain controllor for given domain?
+
+* ## How to get list of domain controllor for given domain?
    you can use the "nltest" command-line tool, which is included with Windows Server. 
    Here are the basic steps:
   * Open a command prompt with administrative privileges.
@@ -26,9 +34,10 @@
   * The command will display a list of domain controllers for the specified domain. The domain controller with the highest priority (lowest number) will be the primary domain controller (PDC) emulator.
   For example, if your domain is named "example.com", the command would be:
   `nltest /dclist:example.com`
-  
-  This command will display a list of domain controllers for the "example.com" domain, along with their priority numbers. You can use this information to select a domain controller based on your specific requirements, such as location or hardware capacity.
+   
+   This command will display a list of domain controllers for the "example.com" domain, along with their priority numbers. You can use this information to select a domain controller based on your specific requirements, such as location or hardware capacity.
 
+* ## Useful commands
 * `echo %logonserver%` - This shows the DC that was used to authenticate and log in the current user
 * `nltest /dsgetsite` - This shows the AD site that the current server has detected that it's in
 * `nltest /dclist:` (include the colon at the end) - This shows the list of DCs in the current domain, including which site each is in.  In this example, MGLABDC4 is in the MG-AZ-EASTUS site, and MGLABDC5 is in the MG-AZ-EASTUS2 site.
