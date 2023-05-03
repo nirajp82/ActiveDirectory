@@ -1,5 +1,7 @@
 ### How to install and configure Active Directory & DNS Services Windows Server 2019
-* https://www.youtube.com/watch?v=TTvhkAOmujU&ab_channel=MSFTWebCast
+* https://www.youtube.com/watch?v=TTvhkAOmujU&ab_channel=MSFTWebCast (How to Add Tree Domain in an Existing Forest | Windows Server 2019)
+* https://www.youtube.com/watch?v=h3sxduUt5a8&list=PLUZTRmXEpBy32NP6z_qvVBOTWUzdTZVHt&index=3 (Setting up Active Directory in Windows Server 2019)
+* https://www.youtube.com/watch?v=BEyNwwjo0u4&list=PLUZTRmXEpBy32NP6z_qvVBOTWUzdTZVHt&index=6 (How to Join Windows Server 2019 to an existing Active Directory Domain)
 * https://www.youtube.com/watch?v=8teMFArShR8&ab_channel=InfoSecPat 
 * https://www.youtube.com/watch?v=0tONNzREopw&ab_channel=sysadmintutorials
 
