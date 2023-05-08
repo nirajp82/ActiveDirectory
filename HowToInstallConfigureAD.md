@@ -3,6 +3,7 @@
 * https://www.youtube.com/watch?v=TTvhkAOmujU&ab_channel=MSFTWebCast (How to Add Tree Domain in an Existing Forest | Windows Server 2019)
 * https://www.youtube.com/watch?v=BEyNwwjo0u4&list=PLUZTRmXEpBy32NP6z_qvVBOTWUzdTZVHt&index=6 (How to Join Windows Server 2019 to an existing Active Directory Domain)
 * https://www.youtube.com/watch?v=1vWSKLX0Xrk (How to Add a Child Domain to an Existing Forest)
+* https://www.youtube.com/watch?v=sqHa2gN1HsY (Adding Additional Domain Controller to an Existing Domain | Windows Server 2019)
 * https://www.youtube.com/watch?v=8teMFArShR8&ab_channel=InfoSecPat 
 * https://www.youtube.com/watch?v=0tONNzREopw&ab_channel=sysadmintutorials
 
