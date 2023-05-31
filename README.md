@@ -262,6 +262,7 @@ References:
 * https://www.codeproject.com/Articles/18102/Howto-Almost-Everything-In-Active-Directory-via-C?display=Print
 * https://www.samba.org/samba/docs/old/Samba3-HOWTO/samba-pdc.html
 * https://techiemaster.wordpress.com/2016/07/18/what-is-active-directory-global-catalog-server/
+* https://rootdse.org/
 
 
 
