@@ -12,7 +12,7 @@ The selected Domain Controller provides the client computer with the site name.
 
             The Windows computer caches the name of its AD site and the name of the used Domain Controller. The selected Domain Controller will be used as long as it is available. The Windows computer no longer needs to re-do the localization process each time it needs to communicate with a Domain Controller.
        
-            ![image](https://github.com/nirajp82/ActiveDirectory/assets/61636643/dba5c973-7906-4b5c-981d-6549e5e936f9)
+   ![image](https://github.com/nirajp82/ActiveDirectory/assets/61636643/c6639028-86eb-4bd2-9524-6e17f08d31ae)
        
        *   The Windows computer and the selected Domain Controller do not belong to the same Active Directory site: In this situation, the following will happen:
              *   The selected Domain Controller provides the client computer with the site name and informs it that it is not the closest Domain Controller
