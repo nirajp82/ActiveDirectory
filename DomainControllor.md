@@ -9,8 +9,8 @@
    *   When the communication is initiated, the selected Domain Controller will check that the client computer belongs to its Active Directory site. This is done by comparing the IP address of the client computers with Active Directory configured sites and subnets. Here, there will be two possible scenarios:
          *   The Windows computer and the selected Domain Controller belong to the same Active Directory site: In this situation, the following will happen:
 The selected Domain Controller provides the client computer with the site name.
-
-            The Windows computer caches the name of its AD site and the name of the used Domain Controller. The selected Domain Controller will be used as long as it is available. The Windows computer no longer needs to re-do the localization process each time it needs to communicate with a Domain Controller.
+               The Windows computer caches the name of its AD site and the name of the used Domain Controller. The selected Domain Controller will be used as long as it is available. The Windows computer no longer needs to re-do the localization process each time it needs to communicate with a Domain Controller.
+      
        
    ![image](https://github.com/nirajp82/ActiveDirectory/assets/61636643/c6639028-86eb-4bd2-9524-6e17f08d31ae)
    
@@ -21,7 +21,7 @@ The selected Domain Controller provides the client computer with the site name.
          *    The Windows computer reviews the list of SRV records and selects one according to the priority and weight assigned to the records. It will then query the DNS server to get the IP address of the selected Domain Controller
          *    The DNS server checks the A record of the Domain Controller and responds with the IP address
          *    The Windows computer contacts the selected Domain Controller and initiates the communication with it
-                  ![image](https://github.com/nirajp82/ActiveDirectory/assets/61636643/0d313657-f36e-4520-a9e7-8973ca21945c)
+              ![image](https://github.com/nirajp82/ActiveDirectory/assets/61636643/0d313657-f36e-4520-a9e7-8973ca21945c)
 
 
 
