@@ -23,7 +23,7 @@ The selected Domain Controller provides the client computer with the site name.
          *    The Windows computer contacts the selected Domain Controller and initiates the communication with it
               ![image](https://github.com/nirajp82/ActiveDirectory/assets/61636643/0d313657-f36e-4520-a9e7-8973ca21945c)
 
-
+Reference: https://social.technet.microsoft.com/wiki/contents/articles/24457.how-domain-controllers-are-located-in-windows.aspx
 
 
             
