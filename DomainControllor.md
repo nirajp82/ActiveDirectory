@@ -1,3 +1,27 @@
+## How is DC Locator process working
+   
+   DC Locator process is used by Windows systems to locate the closest available Domain Controller within an AD Domain. It relies on DNS resolution and AD sites and subnets configuration for the identification. When an AD-integrated Windows computer starts, the following will be done to locate the closest Domain Controller:
+   *   The Windows computer sends an DNS query to ask for DNS resolution of _ldap._tcp.dc._msdcs.domain.com (Example: _ldap._tcp.dc._msdcs.contoso.com) SRV records.
+   *   The DNS server responds with the list of registered DNS records (The records contain the list of Domain Controllers within the AD domain)
+   *   The Windows computer reviews the list of SRV records and selects one according to the priority and weight assigned to the records. It will then query the DNS server to get the IP address of the selected Domain Controller
+   *   The DNS server checks the A record of the Domain Controller and responds with the IP address
+   *   The Windows computer contacts the selected Domain Controller and initiates the communication with it
+   *   When the communication is initiated, the selected Domain Controller will check that the client computer belongs to its Active Directory site. This is done by comparing the IP address of the client computers with Active Directory configured sites and subnets. Here, there will be two possible scenarios:
+         *   The Windows computer and the selected Domain Controller belong to the same Active Directory site: In this situation, the following will happen:
+The selected Domain Controller provides the client computer with the site name.
+![image](https://github.com/nirajp82/ActiveDirectory/assets/61636643/dba5c973-7906-4b5c-981d-6549e5e936f9)
+
+
+
+
+
+
+
+
+
+
+
+
 * ## How domanin controller selection works:
    
    https://concurrency.com/blog/may-2018/domain-controller-selection
