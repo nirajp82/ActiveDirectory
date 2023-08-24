@@ -4,6 +4,10 @@
   
 * ## Useful Active Directory PowerShell Cmdlets
 
+## Count
+ - `(Get-ADUser -Filter {Name -like 'ABC*'} -SearchBase "OU=Users,OU=YourOU,DC=yourdomain,DC=com").Count`: Get count of user whose name starts with ABC in OU
+ - `(Get-ADUser -Filter * -SearchBase "OU=Users,OU=YourOU,DC=yourdomain,DC=com").Count` - Get all user count in OU
+
 ### Getting Information
 
 - `Get-ADUser`: Retrieve user account information.
