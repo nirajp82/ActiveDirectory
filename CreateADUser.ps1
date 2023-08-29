@@ -19,7 +19,6 @@ for ($i = 1; $i -le 50; $i++) {
 }
 
 ###############
-# Import the Active Directory module
 Import-Module ActiveDirectory
 
 # Set the common password for all users
@@ -28,13 +27,17 @@ $password = ConvertTo-SecureString -String "PasswordGoesHere" -AsPlainText -Forc
 # Specify the Organizational Unit (OU) path
 $ouPath = "OU=Users,DC=yourdomain,DC=com"
 
-# Create 5,000 users
-for ($i = 1; $i -le 5000; $i++) {
+# Specify the UPN suffix
+$upnSuffix = "yourdomain.com"
+
+# Create 5 users
+for ($i = 1; $i -le 5; $i++) {
     $givenName = "User$i"
     $surName = "LastName$i"
     $displayName = "User LastName $i"
     $samAccountName = "user$i"
-    $emailAddress = "user$i@yourdomain.com"
+    $emailAddress = "user$i@$upnSuffix"
+    $userPrincipalName = "user$i@$upnSuffix"
 
-    New-ADUser -Name $displayName -GivenName $givenName -Surname $surName -DisplayName $displayName -SamAccountName $samAccountName -EmailAddress $emailAddress -AccountPassword $password -Path $ouPath
+    New-ADUser -Name $displayName -GivenName $givenName -Surname $surName -DisplayName $displayName -SamAccountName $samAccountName -EmailAddress $emailAddress -UserPrincipalName $userPrincipalName -AccountPassword $password -Path $ouPath -Enabled $true
 }
