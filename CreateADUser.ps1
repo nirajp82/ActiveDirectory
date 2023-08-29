@@ -17,3 +17,24 @@ for ($i = 1; $i -le 50; $i++) {
     # Create the user with the given full name and password
     New-ADUser -Name $fullName -GivenName $firstName -Surname $lastName -AccountPassword (ConvertTo-SecureString $password -AsPlainText -Force) -Enabled $true
 }
+
+###############
+# Import the Active Directory module
+Import-Module ActiveDirectory
+
+# Set the common password for all users
+$password = ConvertTo-SecureString -String "PasswordGoesHere" -AsPlainText -Force
+
+# Specify the Organizational Unit (OU) path
+$ouPath = "OU=Users,DC=yourdomain,DC=com"
+
+# Create 5,000 users
+for ($i = 1; $i -le 5000; $i++) {
+    $givenName = "User$i"
+    $surName = "LastName$i"
+    $displayName = "User LastName $i"
+    $samAccountName = "user$i"
+    $emailAddress = "user$i@yourdomain.com"
+
+    New-ADUser -Name $displayName -GivenName $givenName -Surname $surName -DisplayName $displayName -SamAccountName $samAccountName -EmailAddress $emailAddress -AccountPassword $password -Path $ouPath
+}
