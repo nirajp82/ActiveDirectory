@@ -3,6 +3,8 @@
 * `[System.DirectoryServices.ActiveDirectory.ActiveDirectorySite]::GetComputerSite()`: to get an instance of the site where the computer resides. You can access properties of the returned site object to get information about the site's name, description, subnets, etc.
   
 * ## Useful Active Directory PowerShell Cmdlets
+## USN
+- `Get-ADRootDSE -server "YourDomainDC.com" -properties * | select-object -property highestCommittedUSN).highestCommittedUSN` - Get Highest commited USN
 
 ## Count
  - `(Get-ADUser -Filter {Name -like 'ABC*'} -SearchBase "OU=Users,OU=YourOU,DC=yourdomain,DC=com").Count`: Get count of user whose name starts with ABC in OU
