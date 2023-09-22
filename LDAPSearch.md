@@ -1,4 +1,4 @@
-*  ## `member:1.2.840.113556.1.4.1941:`:
+*  ## `member:1.2.840.113556.1.4.1941:`
   The `member:1.2.840.113556.1.4.1941:` syntax you've encountered is an LDAP matching rule filter that specifies how to search for members of a group in a more efficient manner. This specific matching rule filter is often used in Active Directory environments for more optimized membership searches.
     - `member`: This is the attribute being filtered. In this case, it's the "member" attribute, which is used to store the distinguished names (DNs) of members in a group.
     - `1.2.840.113556.1.4.1941`: This is the Object Identifier (OID) that represents a specific matching rule. The OID `1.2.840.113556.1.4.1941` corresponds to the LDAP_MATCHING_RULE_IN_CHAIN rule, which is used to search for all members of a group recursively, including nested members.
@@ -22,7 +22,7 @@ When you execute this query, it will return a list of groups (entries) where the
 The LDAP_MATCHING_RULE_IN_CHAIN is particularly useful when dealing with complex group structures in LDAP directories, as it allows you to find all the memberships in a hierarchical manner without needing to recursively search through nested groups manually.
 
 
-* ## `1.2.840.113556.1.4.803` :
+* ## `1.2.840.113556.1.4.803:` 
      The Object Identifier (OID) `1.2.840.113556.1.4.803` in the context of LDAP (Lightweight Directory Access Protocol) refers to a specific matching rule known as LDAP_MATCHING_RULE_BIT_OR.
     
      The LDAP_MATCHING_RULE_BIT_OR matching rule is used for comparing bit strings. It's primarily used in LDAP to filter or search for entries that have specific bits set in a bit string attribute.
