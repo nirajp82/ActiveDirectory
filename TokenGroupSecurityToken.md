@@ -38,7 +38,7 @@ The `tokenGroups` attribute plays a crucial role in security token generation. H
 
 1. **User Login:** When John logs in to a system, his credentials (username and password) are authenticated against Active Directory.
 2. **Authentication Success:** Upon successful authentication, a security token is generated for John.
-3. **`tokenGroups` Contribution:** The `tokenGroups` attribute for John's user object is queried. This attribute holds the SIDs for all his direct and indirect group memberships.  Token groups represent both direct and indirect group memberships. So, Alice's token will include the "Sales" group as well, thanks to the token group mechanism.
+3. **`tokenGroups` Contribution:** The `tokenGroups` attribute for John's user object is queried. This attribute holds the SIDs for all his direct and indirect group memberships.  Token groups represent both direct and indirect group memberships. So, John's token will include all the indirect and direct group as well, thanks to the token group mechanism.
 5. **Security Token Population:** The retrieved SIDs are incorporated into John's security token. This ensures that his group affiliations are considered when determining his access rights.
 6. **Authorization Decisions:** When John attempts to access a resource, the system examines his security token. The access control list (ACL) associated with the resource is checked against John's user SID and group SIDs within the token. Based on the ACL and John's associated permissions, authorization for access is granted or denied.
 
