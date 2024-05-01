@@ -51,3 +51,19 @@ The `tokenGroups` attribute plays a crucial role in security token generation. H
     * User SID: S-1-5-21-XXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXX-XXXXXXXXXXXX (John's unique identifier)
     * Group SIDs:
         * S-1-5-21-XXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXX-
+     
+        * Security Token for John:
+------------------------------------
+| User Information:               |
+|   Username: John               |
+|   SID: S-1-5-21-3623811015-3361044348-30300820-1013 |
+|---------------------------------|
+| Direct Group Memberships:       |
+|   Marketing                     |
+|---------------------------------|
+| Token Groups:                   |
+|   Marketing                     |
+|   Sales                         |    
+|   Management group(Token group) |
+------------------------------------
+
