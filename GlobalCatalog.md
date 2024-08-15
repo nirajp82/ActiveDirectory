@@ -5,7 +5,8 @@
 ### Overview
 
 Active Directory Domain Services (AD DS) include a **Global Catalog (GC)**, which is a distributed data repository. The Global Catalog contains a partial replica of all objects in the directory and includes partial replicas of the schema and configuration containers. One or more domain controllers within a domain can hold a copy of the Global Catalog.
-Note: Every domain controller can be configured as a Global Catalog server, but it’s typically recommended to have at least one in each site to ensure redundancy and high availability.
+
+**Note**: Every domain controller can be configured as a Global Catalog server, but it’s typically recommended to have at least one in each site to ensure redundancy and high availability.
 
 ### Features of the Global Catalog
 
