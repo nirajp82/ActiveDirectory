@@ -60,6 +60,7 @@ Security Token for John:
 |   SID: S-1-5-21-3623811015-3361044348-30300820-1013 |
 |----------------------------------|
 | Direct Group Memberships:        |
+|   Sales                          |
 |   Marketing                      |
 |----------------------------------|
 | Token Groups:                    |
