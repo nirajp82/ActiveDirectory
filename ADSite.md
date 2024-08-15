@@ -36,22 +36,9 @@ To manage AD Sites, you'll use the **Active Directory Sites and Services** conso
    - Enter the server’s name and click **OK**.
    - Drag and drop the server object into the appropriate site container (if needed).
 
-### The Global Catalog
-
-**Global Catalog** is a distributed data repository that contains a partial replica of every object in the forest, including essential attributes of those objects. It’s crucial for:
-
-1. **Searching Across the Forest**: Users can search for objects across the entire forest even if they’re in different domains.
-   
-2. **Login and Authentication**: Speeding up logins and authentication processes by providing information about all objects in the forest without needing to query each domain individually.
-
-3. **Universal Group Memberships**: The Global Catalog is used to resolve universal group memberships during logon.
-
-**Note**: Every domain controller can be configured as a Global Catalog server, but it’s typically recommended to have at least one in each site to ensure redundancy and high availability.
-
 ### Summary
 
 - **AD Sites** are used to manage physical locations of domain controllers and optimize replication and authentication.
 - **To configure AD Sites**, use the Active Directory Sites and Services console to create sites, assign subnets, and manage domain controllers.
-- The **Global Catalog** is a crucial component for efficient forest-wide searches and authentication.
 
 By understanding and configuring AD Sites and Global Catalogs correctly, you’ll be able to efficiently manage your Active Directory environment and optimize network performance.
