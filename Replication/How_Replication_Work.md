@@ -2,13 +2,9 @@ Reference: https://samilamppu.com/2017/04/23/how-ad-ds-replication-work/
 
 AD DS (ACTIVE DIRECTORY DOMAIN SERVICES)
 
-
-For a long long time I needed to deep dive in current project I’m involved to one of my favorite topics, on-premises AD DS replication.
-
 Below is simplified version of the sequence between source and destination domain controllers when the source initiates replication by sending a change notification (picture from TechNet)
 
 ![image](https://user-images.githubusercontent.com/61636643/197015131-7319c433-ab69-44e2-bd4f-cbb26c052455.png)
-
 
 Domain Controllers use Update Sequence Numbers aka USNs to determine what changes they needs to replicate. Source determines changes that have been received and destination uses USNs to determine what changes it needs to request.
 
@@ -18,7 +14,6 @@ You can find highestCommitedUsn number with PS “Get-ADRootDSE” or with ADSIE
 
 ![image](https://user-images.githubusercontent.com/61636643/197015207-45475903-865a-4e02-aa76-892e0dfa6cde.png)
 
- 
 ![image](https://user-images.githubusercontent.com/61636643/197015248-54e7f734-b2c3-43e7-b334-a996ba872ab2.png)
 
 The following series of diagrams (from Microsoft Technet pages) illustrates the replication for a single object and one of its attributes from creation to replication.
