@@ -6,6 +6,8 @@ To troubleshoot the intermittent delays in your LDAP query program (where most o
 - **How**: 
   - Open **Event Viewer** → **Windows Logs** → **Security**.
   - Filter by **Event ID 4624** (Successful Logon).
+  - ![image](https://github.com/user-attachments/assets/0b48b953-3cab-4c37-bd8f-0ed2083d9c57)
+ 
   - Look for the **Authentication Package** field:
     - If it shows `Kerberos`, then Kerberos is being used.
     - If it shows `NTLM`, then NTLM fallback occurred, which can cause performance issues.
