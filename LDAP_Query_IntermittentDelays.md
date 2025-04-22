@@ -21,6 +21,7 @@ To troubleshoot the intermittent delays in your LDAP query program (where most o
     - **Source** should be a domain controller (not `Local CMOS Clock`).
     - **Last Successful Sync Time** should be recent.
   - If any values are incorrect, use `w32tm /resync` to force a resynchronization.
+![image](https://github.com/user-attachments/assets/8a1d8ca4-14ba-4a35-bad9-a3a983894c37)
 
 ### **3. Check for Kerberos Ticket Expiry or Caching Issues**
 
