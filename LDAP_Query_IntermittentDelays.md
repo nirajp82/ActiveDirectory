@@ -56,6 +56,52 @@ To troubleshoot the intermittent delays in your LDAP query program (where most o
 - **How**: 
   - Optionally, use **Wireshark** or enable Windows auditing to capture LDAP traffic on port **389** (LDAP) and **88** (Kerberos). Look for **AS-REQ** and **TGS-REQ** messages, which indicate Kerberos communication.
 
+### **8. Check DNS Resolution Speed**
+
+- **Goal**: Ensure that DNS resolution is not contributing to delays in your LDAP query.
+  
+- **How**:
+  - Run `nslookup mydc.domain.com` (replace with your actual domain or server name).
+  - Check the **response time**:
+    - Should be under **50ms** (✅).
+    - Over **100ms** indicates DNS resolution is slow (❌).
+  - Optionally, ping the DNS server (`ping <dns-server-ip>`) to check network latency.
+  - Run `w32tm /query /status` to verify if DNS issues are related to time synchronization.
+
+---
+
+### **9. Check DNS Server Performance**
+
+- **Goal**: Ensure your DNS server is performing well and not overloaded.
+  
+- **How**:
+  - Check your **DNS server logs** for performance or error messages.
+  - Ensure DNS records are cached appropriately and that your server is responsive.
+  - Test alternative DNS servers (e.g., Google DNS `8.8.8.8`, Cloudflare DNS `1.1.1.1`) to rule out DNS server issues.
+
+---
+
+### **10. Test DNS Resolution with Alternative DNS Servers**
+
+- **Goal**: Rule out DNS server-related issues by switching to a public DNS service.
+
+- **How**:
+  - Change the DNS server on your machine to use a public DNS service (like **Google DNS** or **Cloudflare DNS**).
+  - Update DNS settings:
+    - Primary DNS: `8.8.8.8` (Google)
+    - Secondary DNS: `8.8.4.4` (Google) or `1.1.1.1` (Cloudflare)
+  - Run the same DNS resolution tests again (e.g., `nslookup`, `ping`).
+
+---
+
+### **11. Use `Resolve-DnsName` (PowerShell) for Detailed Resolution Time**
+
+- **Goal**: Get detailed information on DNS resolution and its timing.
+  
+- **How**:
+  - Run `Resolve-DnsName mydc.domain.com` in PowerShell.
+  - Look for any **latency** or **response issues** in the output.
+
 ---
 
 ### **Summary of What to Check**:
@@ -65,5 +111,8 @@ To troubleshoot the intermittent delays in your LDAP query program (where most o
 4. **Force resync** of time with `w32tm /resync`.
 5. **Force fresh Kerberos auth** by logging off or using **runas**.
 6. **Monitor LDAP traffic** for Kerberos authentication.
+7. | DNS resolution time           | < 50ms (✅), < 100ms (❌)    |
+8. | DNS Server Performance        | Fast resolution (✅)        |
+9. | Alternative DNS Server        | No significant delay (✅)   |
   
 By following these steps, you can pinpoint if time sync, Kerberos authentication, or NTLM fallback is causing the performance issues in your LDAP query application.
