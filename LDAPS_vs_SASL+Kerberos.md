@@ -1,7 +1,3 @@
-Sure! Here's a "ReadMe" formatted version of the provided content, with the key points highlighted and additional details added where necessary for clarity:
-
----
-
 # 🔐 Securing LDAP Communication: LDAPS vs. SASL + Kerberos
 
 ## Overview
